@@ -1,0 +1,278 @@
+ffmpeg started on 2023-06-01 at 16:31:25
+Report written to "ffmpeg-20230601-163125.log"
+Log level: 48
+Command line:
+"C:\\Users\\omiye\\Downloads\\ffmpeg-2023-05-25-git-944243477b-full_build\\bin\\ffmpeg" -vn -i src/memes/vid001aud.mp4 -an -i src/memes/vid001vid.mp4 -acodec copy -vcodec copy -report src/memes/vid001.mp4
+ffmpeg version 2023-05-25-git-944243477b-full_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libuavs3d --enable-libzvbi --enable-librav1e --enable-libsvtav1 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libaom --enable-libjxl --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-d3d11va --enable-dxva2 --enable-libvpl --enable-libshade  libavutil      58.  9.100 / 58.  9.100
+  libavcodec     60. 14.101 / 60. 14.101
+  libavformat    60.  5.100 / 60.  5.100
+  libavdevice    60.  2.100 / 60.  2.100
+  libavfilter     9.  8.101 /  9.  8.101
+  libswscale      7.  2.100 /  7.  2.100
+  libswresample   4. 11.100 /  4. 11.100
+  libpostproc    57.  2.100 / 57.  2.100
+Splitting the commandline.
+Reading option '-vn' ... matched as option 'vn' (disable video) with argument '1'.
+Reading option '-i' ... matched as input url with argument 'src/memes/vid001aud.mp4'.
+Reading option '-an' ... matched as option 'an' (disable audio) with argument '1'.
+Reading option '-i' ... matched as input url with argument 'src/memes/vid001vid.mp4'.
+Reading option '-acodec' ... matched as option 'acodec' (force audio codec ('copy' to copy stream)) with argument 'copy'.
+Reading option '-vcodec' ... matched as option 'vcodec' (force video codec ('copy' to copy stream)) with argument 'copy'.
+Reading option '-report' ... matched as option 'report' (generate a report) with argument '1'.
+Reading option 'src/memes/vid001.mp4' ... matched as output url.
+Finished splitting the commandline.
+Parsing a group of options: global .
+Applying option report (generate a report) with argument 1.
+Successfully parsed a group of options.
+Parsing a group of options: input url src/memes/vid001aud.mp4.
+Applying option vn (disable video) with argument 1.
+Successfully parsed a group of options.
+Opening an input file: src/memes/vid001aud.mp4.
+[AVFormatContext @ 0000012401e30ac0] Opening 'src/memes/vid001aud.mp4' for reading
+[file @ 0000012401e30f00] Setting default whitelist 'file,crypto,data'
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] Format mov,mp4,m4a,3gp,3g2,mj2 probed with size=2048 and score=100
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] ISO: File Type Major Brand: isom
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] Unknown dref type 0x206c7275 size 12
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] advanced_editlist does not work with fragmented MP4. disabling.
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] found tfdt time -1024, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] Before avformat_find_stream_info() pos: 2475 bytes read:65540 seeks:2 nb_streams:1
+For transform of length 64, inverse, mdct_float, flags: [aligned, out_of_place], found 3 matches:
+    1: mdct_inv_float_avx2 - type: mdct_float, len: [16, ∞], factors[2]: [2, any], flags: [aligned, out_of_place, inv_only], prio: 544
+    2: mdct_inv_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, inv_only], prio: 96
+    3: mdct_naive_inv_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, inv_only], prio: -130976
+For transform of length 32, inverse, fft_float, flags: [aligned, inplace, preshuf, asm_call], found 2 matches:
+    1: fft32_asm_float_fma3 - type: fft_float, len: 32, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 512
+    2: fft32_asm_float_avx - type: fft_float, len: 32, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 480
+Transform tree:
+    mdct_inv_float_avx2 - type: mdct_float, len: 64, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+        fft32_asm_float_fma3 - type: fft_float, len: 32, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+For transform of length 64, inverse, mdct_float, flags: [aligned, out_of_place], found 3 matches:
+    1: mdct_inv_float_avx2 - type: mdct_float, len: [16, ∞], factors[2]: [2, any], flags: [aligned, out_of_place, inv_only], prio: 544
+    2: mdct_inv_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, inv_only], prio: 96
+    3: mdct_naive_inv_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, inv_only], prio: -130976
+For transform of length 32, inverse, fft_float, flags: [aligned, inplace, preshuf, asm_call], found 2 matches:
+    1: fft32_asm_float_fma3 - type: fft_float, len: 32, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 512
+    2: fft32_asm_float_avx - type: fft_float, len: 32, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 480
+Transform tree:
+    mdct_inv_float_avx2 - type: mdct_float, len: 64, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+        fft32_asm_float_fma3 - type: fft_float, len: 32, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+For transform of length 120, inverse, mdct_float, flags: [aligned, out_of_place], found 6 matches:
+    1: mdct_inv_float_avx2 - type: mdct_float, len: [16, ∞], factors[2]: [2, any], flags: [aligned, out_of_place, inv_only], prio: 544
+    2: mdct_pfa_15xM_inv_float_c - type: mdct_float, len: [30, ∞], factors[2]: [15, any], flags: [unaligned, out_of_place, inv_only], prio: 304
+    3: mdct_pfa_5xM_inv_float_c - type: mdct_float, len: [10, ∞], factors[2]: [5, any], flags: [unaligned, out_of_place, inv_only], prio: 144
+    4: mdct_pfa_3xM_inv_float_c - type: mdct_float, len: [6, ∞], factors[2]: [3, any], flags: [unaligned, out_of_place, inv_only], prio: 112
+    5: mdct_inv_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, inv_only], prio: 96
+    6: mdct_naive_inv_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, inv_only], prio: -130976
+For transform of length 60, inverse, fft_float, flags: [aligned, inplace, preshuf, asm_call], found 1 matches:
+    1: fft_pfa_15xM_asm_float_avx2 - type: fft_float, len: [60, ∞], factors[2]: [15, 2], flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 688
+For transform of length 4, inverse, fft_float, flags: [aligned, inplace, preshuf, asm_call], found 1 matches:
+    1: fft4_fwd_asm_float_sse2 - type: fft_float, len: 4, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 352
+Transform tree:
+    mdct_inv_float_avx2 - type: mdct_float, len: 120, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+        fft_pfa_15xM_asm_float_avx2 - type: fft_float, len: 60, factors[2]: [15, 2], flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+            fft4_fwd_asm_float_sse2 - type: fft_float, len: 4, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+For transform of length 128, inverse, mdct_float, flags: [aligned, out_of_place], found 3 matches:
+    1: mdct_inv_float_avx2 - type: mdct_float, len: [16, ∞], factors[2]: [2, any], flags: [aligned, out_of_place, inv_only], prio: 544
+    2: mdct_inv_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, inv_only], prio: 96
+    3: mdct_naive_inv_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, inv_only], prio: -130976
+For transform of length 64, inverse, fft_float, flags: [aligned, inplace, preshuf, asm_call], found 3 matches:
+    1: fft_sr_asm_float_avx2 - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 480
+    2: fft_sr_asm_float_fma3 - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 448
+    3: fft_sr_asm_float_avx - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 416
+Transform tree:
+    mdct_inv_float_avx2 - type: mdct_float, len: 128, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+        fft_sr_asm_float_avx2 - type: fft_float, len: 64, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+For transform of length 480, inverse, mdct_float, flags: [aligned, out_of_place], found 6 matches:
+    1: mdct_inv_float_avx2 - type: mdct_float, len: [16, ∞], factors[2]: [2, any], flags: [aligned, out_of_place, inv_only], prio: 544
+    2: mdct_pfa_15xM_inv_float_c - type: mdct_float, len: [30, ∞], factors[2]: [15, any], flags: [unaligned, out_of_place, inv_only], prio: 304
+    3: mdct_pfa_5xM_inv_float_c - type: mdct_float, len: [10, ∞], factors[2]: [5, any], flags: [unaligned, out_of_place, inv_only], prio: 144
+    4: mdct_pfa_3xM_inv_float_c - type: mdct_float, len: [6, ∞], factors[2]: [3, any], flags: [unaligned, out_of_place, inv_only], prio: 112
+    5: mdct_inv_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, inv_only], prio: 96
+    6: mdct_naive_inv_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, inv_only], prio: -130976
+For transform of length 240, inverse, fft_float, flags: [aligned, inplace, preshuf, asm_call], found 1 matches:
+    1: fft_pfa_15xM_asm_float_avx2 - type: fft_float, len: [60, ∞], factors[2]: [15, 2], flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 688
+For transform of length 16, inverse, fft_float, flags: [aligned, inplace, preshuf, asm_call], found 2 matches:
+    1: fft16_asm_float_fma3 - type: fft_float, len: 16, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 512
+    2: fft16_asm_float_avx - type: fft_float, len: 16, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 480
+Transform tree:
+    mdct_inv_float_avx2 - type: mdct_float, len: 480, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+        fft_pfa_15xM_asm_float_avx2 - type: fft_float, len: 240, factors[2]: [15, 2], flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+            fft16_asm_float_fma3 - type: fft_float, len: 16, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+For transform of length 512, inverse, mdct_float, flags: [aligned, out_of_place], found 3 matches:
+    1: mdct_inv_float_avx2 - type: mdct_float, len: [16, ∞], factors[2]: [2, any], flags: [aligned, out_of_place, inv_only], prio: 544
+    2: mdct_inv_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, inv_only], prio: 96
+    3: mdct_naive_inv_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, inv_only], prio: -130976
+For transform of length 256, inverse, fft_float, flags: [aligned, inplace, preshuf, asm_call], found 3 matches:
+    1: fft_sr_asm_float_avx2 - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 480
+    2: fft_sr_asm_float_fma3 - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 448
+    3: fft_sr_asm_float_avx - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 416
+Transform tree:
+    mdct_inv_float_avx2 - type: mdct_float, len: 512, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+        fft_sr_asm_float_avx2 - type: fft_float, len: 256, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+For transform of length 960, inverse, mdct_float, flags: [aligned, out_of_place], found 6 matches:
+    1: mdct_inv_float_avx2 - type: mdct_float, len: [16, ∞], factors[2]: [2, any], flags: [aligned, out_of_place, inv_only], prio: 544
+    2: mdct_pfa_15xM_inv_float_c - type: mdct_float, len: [30, ∞], factors[2]: [15, any], flags: [unaligned, out_of_place, inv_only], prio: 304
+    3: mdct_pfa_5xM_inv_float_c - type: mdct_float, len: [10, ∞], factors[2]: [5, any], flags: [unaligned, out_of_place, inv_only], prio: 144
+    4: mdct_pfa_3xM_inv_float_c - type: mdct_float, len: [6, ∞], factors[2]: [3, any], flags: [unaligned, out_of_place, inv_only], prio: 112
+    5: mdct_inv_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, inv_only], prio: 96
+    6: mdct_naive_inv_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, inv_only], prio: -130976
+For transform of length 480, inverse, fft_float, flags: [aligned, inplace, preshuf, asm_call], found 1 matches:
+    1: fft_pfa_15xM_asm_float_avx2 - type: fft_float, len: [60, ∞], factors[2]: [15, 2], flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 688
+For transform of length 32, inverse, fft_float, flags: [aligned, inplace, preshuf, asm_call], found 2 matches:
+    1: fft32_asm_float_fma3 - type: fft_float, len: 32, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 512
+    2: fft32_asm_float_avx - type: fft_float, len: 32, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 480
+Transform tree:
+    mdct_inv_float_avx2 - type: mdct_float, len: 960, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+        fft_pfa_15xM_asm_float_avx2 - type: fft_float, len: 480, factors[2]: [15, 2], flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+            fft32_asm_float_fma3 - type: fft_float, len: 32, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+For transform of length 1024, inverse, mdct_float, flags: [aligned, out_of_place], found 3 matches:
+    1: mdct_inv_float_avx2 - type: mdct_float, len: [16, ∞], factors[2]: [2, any], flags: [aligned, out_of_place, inv_only], prio: 544
+    2: mdct_inv_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, inv_only], prio: 96
+    3: mdct_naive_inv_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, inv_only], prio: -130976
+For transform of length 512, inverse, fft_float, flags: [aligned, inplace, preshuf, asm_call], found 3 matches:
+    1: fft_sr_asm_float_avx2 - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 480
+    2: fft_sr_asm_float_fma3 - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 448
+    3: fft_sr_asm_float_avx - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call], prio: 416
+Transform tree:
+    mdct_inv_float_avx2 - type: mdct_float, len: 1024, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+        fft_sr_asm_float_avx2 - type: fft_float, len: 512, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+For transform of length 1024, forward, mdct_float, flags: [aligned, out_of_place], found 2 matches:
+    1: mdct_fwd_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, fwd_only], prio: 96
+    2: mdct_naive_fwd_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, fwd_only], prio: -130976
+For transform of length 512, forward, fft_float, flags: [aligned, inplace, preshuf], found 5 matches:
+    1: fft_sr_ns_float_avx2 - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf], prio: 480
+    2: fft_sr_ns_float_fma3 - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf], prio: 448
+    3: fft_sr_ns_float_avx - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf], prio: 416
+    4: fft_pfa_ns_float_c - type: fft_float, len: [6, ∞], factors[2]: [7, 5, 3, 2, any], flags: [unaligned, inplace, out_of_place, preshuf], prio: 112
+    5: fft512_ns_float_c - type: fft_float, len: 512, factor: 2, flags: [unaligned, inplace, out_of_place, preshuf], prio: 96
+Transform tree:
+    mdct_fwd_float_c - type: mdct_float, len: 1024, factors[2]: [2, any], flags: [unaligned, out_of_place, fwd_only]
+        fft_sr_ns_float_avx2 - type: fft_float, len: 512, factor: 2, flags: [aligned, inplace, out_of_place, preshuf]
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] demuxer injecting skip 1024 / discard 0
+[aac @ 0000012401e424c0] skip 1024 / discard 0 samples due to side data
+[aac @ 0000012401e424c0] skip whole frame, skip left: 0
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] All info found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] After avformat_find_stream_info() pos: 2501 bytes read:65540 seeks:2 frames:1
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'src/memes/vid001aud.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2mp41iso5
+  Duration: 00:00:59.79, start: 0.000000, bitrate: 131 kb/s
+  Stream #0:0[0x1](und), 1, 1/48000: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 8 kb/s (default)
+    Metadata:
+      handler_name    : Bento4 Sound Handler
+      vendor_id       : [0][0][0][0]
+Successfully opened the file.
+Parsing a group of options: input url src/memes/vid001vid.mp4.
+Applying option an (disable audio) with argument 1.
+Successfully parsed a group of options.
+Opening an input file: src/memes/vid001vid.mp4.
+[AVFormatContext @ 00000124022f08c0] Opening 'src/memes/vid001vid.mp4' for reading
+[file @ 00000124022f1c40] Setting default whitelist 'file,crypto,data'
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] Format mov,mp4,m4a,3gp,3g2,mj2 probed with size=2048 and score=100
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] ISO: File Type Major Brand: isom
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] Unknown dref type 0x206c7275 size 12
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] advanced_editlist does not work with fragmented MP4. disabling.
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] found tfdt time 0, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] Before avformat_find_stream_info() pos: 1890 bytes read:65540 seeks:2 nb_streams:1
+[h264 @ 0000012401e37c00] nal_unit_type: 7(SPS), nal_ref_idc: 3
+[h264 @ 0000012401e37c00] Decoding VUI
+[h264 @ 0000012401e37c00] nal_unit_type: 8(PPS), nal_ref_idc: 3
+[h264 @ 0000012401e37c00] nal_unit_type: 7(SPS), nal_ref_idc: 3
+[h264 @ 0000012401e37c00] Decoding VUI
+[h264 @ 0000012401e37c00] nal_unit_type: 8(PPS), nal_ref_idc: 3
+[h264 @ 0000012401e37c00] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0000012401e37c00] nal_unit_type: 5(IDR), nal_ref_idc: 3
+[h264 @ 0000012401e37c00] Format yuv420p chosen by get_format().
+[h264 @ 0000012401e37c00] Reinit context to 416x720, pix_fmt: yuv420p
+[h264 @ 0000012401e37c00] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 2
+[h264 @ 0000012401e37c00] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 2
+[h264 @ 0000012401e37c00] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 2
+[h264 @ 0000012401e37c00] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 2
+[h264 @ 0000012401e37c00] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 2
+[h264 @ 0000012401e37c00] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 2
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] All info found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] After avformat_find_stream_info() pos: 48644 bytes read:98308 seeks:2 frames:21
+Input #1, mov,mp4,m4a,3gp,3g2,mj2, from 'src/memes/vid001vid.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41iso5
+  Duration: 00:00:59.77, start: 0.000000, bitrate: 2114 kb/s
+  Stream #1:0[0x1](und), 21, 1/3000: Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, smpte170m/bt470bg/bt709, progressive), 406x720 [SAR 1:1 DAR 203:360], 56 kb/s, SAR 32766:32767 DAR 158369:280860, 30 fps, 30 tbr, 3k tbn (default)
+    Metadata:
+      handler_name    : Bento4 Video Handler
+      vendor_id       : [0][0][0][0]
+Successfully opened the file.
+Parsing a group of options: output url src/memes/vid001.mp4.
+Applying option acodec (force audio codec ('copy' to copy stream)) with argument copy.
+Applying option vcodec (force video codec ('copy' to copy stream)) with argument copy.
+Successfully parsed a group of options.
+Opening an output file: src/memes/vid001.mp4.
+[file @ 00000124024ee3c0] Setting default whitelist 'file,crypto,data'
+Output #0, mp4, to 'src/memes/vid001.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2mp41iso5
+    encoder         : Lavf60.5.100
+  Stream #0:0(und), 0, 1/12000: Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, smpte170m/bt470bg/bt709, progressive), 406x720 [SAR 32766:32767 DAR 158369:280860], q=2-31, 56 kb/s, 30 fps, 30 tbr, 12k tbn (default)
+    Metadata:
+      handler_name    : Bento4 Video Handler
+      vendor_id       : [0][0][0][0]
+  Stream #0:1(und), 0, 1/48000: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 8 kb/s (default)
+    Metadata:
+      handler_name    : Bento4 Sound Handler
+      vendor_id       : [0][0][0][0]
+Successfully opened the file.
+Stream mapping:
+  Stream #1:0 -> #0:0 (copy)
+  Stream #0:0 -> #0:1 (copy)
+Press [q] to stop, [?] for help
+[vost#0:0/copy @ 0000012401ec8f40] cur_dts is invalid [init:1 i_done:0 finish:0] (this is harmless if it occurs once at the start per stream)
+[aost#0:1/copy @ 0000012401eda340] cur_dts is invalid [init:1 i_done:0 finish:0] (this is harmless if it occurs once at the start per stream)
+frame=    0 fps=0.0 q=-1.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=N/A    [aost#0:1/copy @ 0000012401eda340] cur_dts is invalid [init:1 i_done:0 finish:0] (this is harmless if it occurs once at the start per stream)
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] found tfdt time 9700, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] found tfdt time 191488, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] found tfdt time 21000, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] found tfdt time 384000, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] found tfdt time 33000, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] found tfdt time 576512, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] found tfdt time 45000, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] found tfdt time 769024, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] found tfdt time 57000, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] found tfdt time 961536, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] found tfdt time 69000, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] found tfdt time 1154048, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] found tfdt time 80900, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] found tfdt time 1346560, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] found tfdt time 92900, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] found tfdt time 1539072, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] found tfdt time 104900, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] found tfdt time 1731584, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] found tfdt time 116600, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] found tfdt time 1924096, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] found tfdt time 127000, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] found tfdt time 2116608, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] found tfdt time 137500, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] found tfdt time 2309120, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] found tfdt time 149000, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] found tfdt time 2501632, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] found tfdt time 161000, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e30ac0] found tfdt time 2694144, using it for dts
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000124022f08c0] found tfdt time 171000, using it for dts
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e177c0] EOF while reading input
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e177c0] Terminating demuxer thread
+[in#1/mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e396c0] EOF while reading input
+[in#1/mov,mp4,m4a,3gp,3g2,mj2 @ 0000012401e396c0] Terminating demuxer thread
+No more output streams to write to, finishing.
+[out#0/mp4 @ 00000124024e0cc0] All streams finished
+[out#0/mp4 @ 00000124024e0cc0] Terminating muxer thread
+[AVIOContext @ 00000124024ee4c0] Statistics: 16796320 bytes written, 2 seeks, 67 writeouts
+[out#0/mp4 @ 00000124024e0cc0] Output file #0 (src/memes/vid001.mp4):
+[out#0/mp4 @ 00000124024e0cc0]   Output stream #0:0 (video): 1793 packets muxed (15783219 bytes); 
+[out#0/mp4 @ 00000124024e0cc0]   Output stream #0:1 (audio): 2803 packets muxed (959969 bytes); 
+[out#0/mp4 @ 00000124024e0cc0]   Total: 4596 packets (16743188 bytes) muxed

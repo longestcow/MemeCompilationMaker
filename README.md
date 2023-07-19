@@ -7,7 +7,7 @@ i was scrolling through youtube and found a [hollow knight meme compilation vide
 * profit
   
 i realised later on that this isnt revolutionary and that it's been done before, so im just gonna put my code out here since its not like it's actually gonna turn into profit in any way.  
-i still enjoyed making this and working with ffmpeg and stuff and i plan on finishing it even though im not gonna use it  
+i still liked making this and working with ffmpeg and stuff and i plan on finishing it even though im not gonna use it  
   
 # todo
 * i'm left with the whole youtube api part, and the video making bugs out at times so im planning on fixing that too.  

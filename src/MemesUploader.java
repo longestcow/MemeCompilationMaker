@@ -33,24 +33,10 @@ public class MemesUploader {
 	
 	static String sub = "memes",time="",len="";
 	static int n = 100;
-	static String ff="C:\\Users\\omiye\\Downloads\\ffmpeg-2023-05-25-git-944243477b-full_build\\bin\\ffmpeg";
+	static String ff="src\\ffmpeg";
 
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
-		
-		String a = "abcdefghijklmnopqrstuvwxyz";
-		String b = "julypepsiviibnywbleepchinardiamworthyhttpsyoutubeavyywugbs";
-		System.out.println(a);
-		for(char c : b.toCharArray()) {
-			if(!a.contains(c+"")) {
-				System.out.println(c);
-			}
-		}
-		
-		
-		
-		if(n==100)
-			return;
 		long start = System.currentTimeMillis();
 		
 		saveImages(getImageURLs(sub)); //save all images to src/memes

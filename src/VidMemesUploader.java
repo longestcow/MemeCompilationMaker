@@ -29,7 +29,7 @@ public class VidMemesUploader {
 	
 	static String sub = "discordVideos",time="", len;
 	static int n = 120;
-	static String ff="C:\\Users\\omiye\\Downloads\\ffmpeg-2023-05-25-git-944243477b-full_build\\bin\\ffmpeg";
+	static String ff="src\\ffmpeg";
 
 	
 	public static void main(String[] args) throws Exception {

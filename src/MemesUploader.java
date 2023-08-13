@@ -15,11 +15,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 import javax.imageio.IIOException;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 
 import org.apache.commons.io.FileUtils;
 
@@ -31,14 +31,18 @@ import com.google.gson.JsonParser;
 public class MemesUploader {
 	
 	
-	static String sub = "memes",time="",len="";
+	static String sub = "",music="",time="",len="";
 	static int n = 100;
 	static String ff="src\\ffmpeg";
 
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
+		Scanner s = new Scanner(System.in);
 		long start = System.currentTimeMillis();
-		
+		System.out.println("Subreddit name: ");
+		sub = s.nextLine();
+		System.out.println("Music: ");
+		music = s.nextLine();
 		saveImages(getImageURLs(sub)); //save all images to src/memes
 		System.out.println("images retrieved ("+((System.currentTimeMillis()-start)/1000)+"s)");
 		if(!makeVideo()) {
@@ -54,7 +58,7 @@ public class MemesUploader {
 	}
 	
 	public static List<String> getImageURLs(String sub) throws IOException{
-		URL jsons = new URL("https://www.reddit.com/r/"+sub+"/top.json?t=week&limit=200&raw_json=1");//get the memes as json objects
+		URL jsons = new URL("https://www.reddit.com/r/"+sub+"/top.json?t=month&limit=200&raw_json=1");//get the memes as json objects
 		URLConnection con = jsons.openConnection();
 		con.setRequestProperty("User-Agent", "Windows 11:com.MemeUploader.MemeUploader:v0.1 (by /u/user_guy_thing)"); //you have to do this so that reddit doesnt freak out
 	    JsonElement root = JsonParser.parseReader(new InputStreamReader((InputStream) con.getContent()));
@@ -169,14 +173,14 @@ public class MemesUploader {
 
 	public static void combineFiles() throws InterruptedException, IOException {
 		String of = "vids//"+time;
-		String music = "\"music//"+ThreadLocalRandom.current().nextInt(1, 10)+".mp3\"";
-		System.out.println("music picked: "+music);
-		ProcessBuilder pb = new ProcessBuilder(ff, "-i", music, "-i", "\""+of+".mp4\"", "-acodec", "copy", "-vcodec", "copy", "-shortest", "\""+of+"finished.mp4\"");
-		pb.redirectErrorStream();
+		String musicc = (music.isEmpty())?"\"music//"+ThreadLocalRandom.current().nextInt(1, 10)+".mp3\"":music;
+		System.out.println("music picked: "+musicc);
+		ProcessBuilder pb = new ProcessBuilder(ff, "-i", musicc, "-i", "\""+of+".mp4\"", "-acodec", "copy", "-vcodec", "copy", "-shortest", "\""+of+"finished.mp4\"");
+		pb.redirectErrorStream(true);
 		Process proc = pb.start();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
 		String st = null;
-		while ((st=reader.readLine()) != null) {System.out.println(st);}
+		while ((st=reader.readLine()) != null) {}
 		proc.waitFor();
 		new File(of+".mp4").delete();
 		System.out.println("done");

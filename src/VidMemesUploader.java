@@ -107,12 +107,19 @@ public class VidMemesUploader {
 	    	
 	    	InputStream inVid = new URL(url).openStream(); 
 	    	Files.copy(inVid, new File(fvname).toPath());
-	    	InputStream inAud = new URL(url.replace("DASH_"+dash, "DASH_audio")).openStream();
-	    	Files.copy(inAud, new File(faname).toPath());
-	    	
-	    	System.out.println("seperate files saved to memory");
-	    	
-	    	mergeVidAud(fvname, faname, fname);
+	    	try{
+		    	InputStream inAud =new URL(url.replace("DASH_"+dash, "DASH_audio")).openStream();
+		    	Files.copy(inAud, new File(faname).toPath());
+		    	
+		    	System.out.println("seperate files saved to memory");
+		    	
+		    	mergeVidAud(fvname, faname, fname);
+	    	} catch(Exception e) {
+		    	fname=fvname;
+		    	System.out.println("no audio - "+e.getMessage());
+		    		    		
+	    	}
+
 	    	
 	    	out.println("file '"+fname+"'");
 	    	

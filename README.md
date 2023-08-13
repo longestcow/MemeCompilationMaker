@@ -26,7 +26,8 @@ FFMPEG is used again here to combine the compilation video with this selected mu
 After this process is done and the new video is created, the old video file without the music is deleted.  
 You can find this new file in the "vids" folder. After all of that, I simply take this video file and upload it to Youtube.  
 As I said above, I have plans on automating the final step as well. I'm waiting for google to give me the permission for the Youtube API usage.    
-  
+Another feature I had in mind was to make a video-meme version where instead of getting static images from a subreddit, it instead gets videos (mp4s, mkvs, etc) and puts them all together. I have [written out the foundation](https://github.com/longestcow/MemeCompilationMaker/blob/main/src/VidMemesUploader.java) for this but it is still somewhat buggy.  
+[The main code file](https://github.com/longestcow/MemeCompilationMaker/blob/main/src/MemesUploader.java).  
 I enjoyed making this and understanding how ffmpeg and other libraries like GSON work and I plan on adding more functionalities and eventually automating the process entirely.  
 
   

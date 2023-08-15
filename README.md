@@ -1,5 +1,4 @@
 # Meme Compilation Maker
-#### Video Demo: https://youtu.be/zRHhGmV0PSo
 #### Description: 
 I was scrolling through Youtube and found a [hollow knight meme compilation video](https://youtu.be/2YiZtwzOR3Q) and realised that this entire process could be automated -  
 * Get top 100 posts from past week from some meme subreddit  
